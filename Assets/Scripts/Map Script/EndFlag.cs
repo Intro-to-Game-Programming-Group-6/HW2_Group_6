@@ -36,7 +36,6 @@ public class EndFlag : MonoBehaviour
     {
         if(obj.tag == "Indicator")// || obj.gameObject.layer == 3)
         {
-            print("pindah map");
             MapManager.GetInstance().EndScene();
         }
     }

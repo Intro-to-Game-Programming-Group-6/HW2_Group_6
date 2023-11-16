@@ -707,6 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4dd49f3973f8740826a29b76bc64de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 0}
 --- !u!114 &382020749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8443,7 +8444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1633715071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8457,9 +8458,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene:
-  - Scene_2
+  - Main Menu
   - Scene_3
   - Main Menu
+  gameOverScene: 
 --- !u!4 &1633715072
 Transform:
   m_ObjectHideFlags: 0
@@ -9332,6 +9334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa41fac18961fe24984d27fa337a2201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodPrefab: {fileID: 0}
 --- !u!114 &2071743629
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -57,6 +57,11 @@ public class HealthManager : MonoBehaviour
         {
             currentHealth = 0;
         }
+
+        if(currentHealth == 0)
+        {
+            MapManager.GetInstance().GameOver();
+        }
     }
 
     public void DoDamage(int damage)

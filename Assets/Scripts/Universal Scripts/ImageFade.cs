@@ -6,12 +6,25 @@ using UnityEngine.UI;
 public class ImageFade : MonoBehaviour
 {
     private static ImageFade instance;
-    private Image image;
+    public Image image;
 
     private void Awake()
     {
-        instance = this;
+        if(instance == null)
+		{	
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+		else if(instance != this)
+        {
+            Destroy(gameObject);
+        }
         image = GetComponent<Image>();
+    }
+
+    void Start()
+    {
+        // image = GetComponent<Image>();
     }
 
     public static ImageFade GetInstance()

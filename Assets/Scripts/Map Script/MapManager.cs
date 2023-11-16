@@ -8,6 +8,7 @@ public class MapManager : MonoBehaviour
     private static MapManager instance;
 
     public List<string> nextScene;
+    public string gameOverScene;
     private int sceneIDX = 0;
 
     void Awake()
@@ -38,22 +39,18 @@ public class MapManager : MonoBehaviour
         StartCoroutine(ChangeScene(nextScene[sceneIDX]));
     }
 
+    public void GameOver()
+    {
+        StartCoroutine(ChangeScene(gameOverScene));
+    }
+
     private IEnumerator ChangeScene(string scene)
     {
-        print("pindah ke scene:" + scene);
         ImageFade.GetInstance().StartFade(Color.black, 2f);
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(scene);
-        if(nextScene[sceneIDX] == "Main Menu")
-        {
-            Destroy(gameObject);
-            Destroy(MapManager.GetInstance().gameObject);
-        }
-        else
-        {
-            sceneIDX += 1;
-            Reset();
-        }   
+        sceneIDX += 1;
+        Reset();  
     }
 
     private void Reset()
